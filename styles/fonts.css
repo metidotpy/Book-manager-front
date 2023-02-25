@@ -1,0 +1,20 @@
+@font-face {
+    font-family: "Iransans";
+    src: url(../fonts/IRANSansX-Regular.ttf);
+    src: url(../fonts/IRANSansX-Regular.woff);
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "Iransans";
+    src: url(../fonts/IRANSansX-Bold.ttf);
+    src: url(../fonts/IRANSansX-Bold.woff2);
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: "Iransans";
+    src: url(../fonts/IRANSansX-Medium.ttf);
+    src: url(../fonts/IRANSansX-Medium.woff2);
+    font-weight: 600;
+}
