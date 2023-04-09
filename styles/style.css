@@ -6,6 +6,7 @@
     --secondary-clr: #F8E7D7;
     --main-clr-low-opacity: #000022cc;
     --secondary-clr-low-opacity: #f8e7d7ef;
+    --input-color: #1d2b3a;
     
 }
 
@@ -41,8 +42,15 @@ body{
     background: var(--secondary-clr);
     position: relative;
     width: 13rem;
+    /* position: fixed; */
 }
-
+.nav{
+    position: static !important;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* width: 13rem !important; */
+}
 
 .book-image{
     width: 5rem;
@@ -121,7 +129,7 @@ ul.nav .nav-item a:hover{
     color: var(--secondary-clr) !important;
 }
 
-ul.nav .nav-item a:hover span.text-menu{
+ul.nav .nav-item a:hover span.text-for-menu{
     color: var(--secondary-clr) !important;
 
 }
@@ -139,17 +147,17 @@ ul.nav li.active a.close span.icon{
     margin: 0;
 }
 
-ul.nav li.active a span.text-menu{
+ul.nav li.active a span.text-for-menu{
     color: var(--secondary-clr) !important;
 }
 
 
-ul.nav li a span.text-menu{
-    animation-name: menu-height;
-    animation-duration: 2.0s;
+ul.nav li a span.text-for-menu{
+    /* animation-name: menu-height; */
+    /* animation-duration: 2.0s;
     animation-direction: alternate;
     animation-iteration-count: 1;
-    animation-fill-mode: forwards;
+    animation-fill-mode: forwards; */
     overflow: hidden;
 }
 
@@ -205,14 +213,21 @@ span.logout{
 }
 
 span.menu{
+    position: absolute;
+    left: -2.5rem;
     display: inline-block;
     margin: 0.4rem 0.3rem;
     cursor: pointer;
     color: var(--secondary-clr) !important;
     font-size: 1.7rem;
+    cursor: pointer;
+    /* z-index: 500000 !important; */
+    /* background-color: var(--main-clr) !important; */
+    /* color: var(--main-clr) !important; */
+    /* margin: 50rem; */
 }
 
-span.text-menu.deactive{
+span.text-for-menu.deactive{
     display: none;
 }
 
@@ -293,20 +308,16 @@ ul.nav li{
 }
 ul.nav li a.close{
     animation: close 1 alternate forwards 2.0s;
+    width: 3.5rem !important;
+    height: 3.5rem !important;
+    transition: 2s;
 }
 
 @keyframes close {
     to{
         border-radius: 50%;
-        justify-content: center !important;
-        align-items: center !important;
-        width: 3.5rem !important;
-        height: 3.5rem !important;
-        /* -webkit-transition: all 1s ease-in-out;
-        -moz-transition: all 1s ease-in-out;
-        -o-transition: all 1s ease-in-out;
-        transition: all 1s ease-in-out !important; */
-        margin: auto !important;
+        justify-content: center;
+        align-items: center;
     }
 }
 
@@ -441,6 +452,166 @@ a.close span.icon{
     }
     100%{
         height: 100%;
-        /* display: none; */
     }
 }
+
+/* Card Section */
+.card-section{
+    width: 70% !important;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, auto));
+    grid-gap: 1.5rem;
+    align-items: center;
+}
+.card{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 15rem;
+}
+/* End Card Section */
+
+
+
+/* Login and signup form */
+main{
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+main form{
+    width: 30rem;
+    height: 42rem;
+    background: var(--input-color);
+    border-radius: 10px;
+}
+form.open{
+    animation: open-form 2s 1 forwards alternate;
+}
+
+@keyframes open-form {
+    0%{
+        width: 0;
+        height: 0;
+    }
+    25%{
+        width: 20rem;
+        height: 20rem;
+    }
+    50%{
+        width: 40rem;
+    }
+    75%{
+        width: 35rem;
+        height: 40rem;
+    }
+    100%{
+        width: 30rem;
+        height: 45rem;
+    }
+
+}
+
+form .logo{
+    padding: 2rem !important;
+    margin: 0 !important;
+    background: var(--secondary-clr);
+    border-radius: 10px 10px 0 0;
+}
+form .line{
+    margin-top: 0 !important;
+}
+.login-logo{
+    width: 14rem;
+    height: 9rem;
+    object-fit: cover;
+}
+.logo-text{
+    color: var(--main-clr);
+}
+
+.input-box{
+    position: relative;
+    width: 300px;
+    margin-top: 1rem;
+}
+
+.input-box input{
+    direction: ltr !important;
+    width: 100%;
+    padding: 10px;
+    border: 2px solid rgba(255, 255, 255, 0.25) !important;
+    background: var(--input-color);
+    border-radius: 5px;
+    outline: none;
+    color: var(--secondary-clr);
+    font-size: 1em;
+}
+
+.input-box span{
+    position: absolute;
+    right: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.25) !important;
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+
+.inputs{
+    height: 15rem;
+    display: flex;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+}
+
+.input-box input:valid ~ span,
+.input-box input:focus ~ span{
+    color: #00dfc4 !important;
+    transform: translateX(-10px) translateY(-10px);
+    font-size: 0.9rem;
+    padding: 0 10px;
+    background: var(--input-color);
+    border-left: 1px solid #00dfc4 !important;
+    border-right: 1px solid #00dfc4 !important;
+}
+
+.input-box input:valid,
+.input-box input:focus{
+    border: 2px solid #00dfc4 !important;
+}
+
+.to-show{
+    animation: to-show 2s 1 forwards alternate;
+}
+@keyframes to-show {
+    to{
+        opacity: 1;
+    }
+}
+
+.to-hide{
+    opacity: 0;
+}
+
+.two-side{
+    direction: rtl;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.two-side .input-box{
+    width: 140px;
+    margin-top: 2rem;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+.inputs .box{
+    text-align: center;
+}
+
+/* End login and signup form */
