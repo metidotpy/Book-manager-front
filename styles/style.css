@@ -33,6 +33,8 @@ body{
     
 }
 
+
+
 .nomargin {margin: 0 !important; padding: 0 !important;}
 
 
@@ -239,22 +241,31 @@ span.text-for-menu.deactive{
     animation-fill-mode: forwards;
 }
 
+@media screen and (max-width: 640px){
+    .card{
+        width: 15rem !important;
+    }
+    .navigation{
+        width: 8rem !important;
+    }
+}
+
 @keyframes menu-animation {
     0%{
-        width: 13rem;
+        width: 13rem !important;
     }
     
 
     50%{
-        width: 16rem;
+        width: 16rem !important;
     }
 
     75%{
-        width: 10rem;
+        width: 10rem !important;
     }
 
     100%{
-        width: 5rem;
+        width: 5rem !important;
     }
 }
 
@@ -646,7 +657,7 @@ form .line{
 /* End login and signup form */
 
 div.home{
-    height: 100vh;
+    /* height: 100vh; */
     display: flex;
     justify-content: space-between;
 }
@@ -660,5 +671,6 @@ div.home{
         margin: 0 !important;
         margin-top: 1rem !important;
         gap: 1.5rem;
+        /* overflow: scroll; */
     }
 }
