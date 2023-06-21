@@ -181,6 +181,16 @@ ul.nav li.active a span.icon{
     justify-content: space-between;
     align-items: center;
     padding: 0.8rem 1.3rem;
+    animation: profile-animation 2s alternate 1 forwards;
+}
+@keyframes profile-animation {
+    to{
+        height: 7rem;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 1.5rem;
+    }
 }
 
 .profile-section span.username{
@@ -240,34 +250,25 @@ span.text-for-menu.deactive{
     animation-iteration-count: 1;
     animation-fill-mode: forwards;
 }
-
-@media screen and (max-width: 640px){
-    .card{
-        width: 15rem !important;
-    }
-    .navigation{
-        width: 8rem !important;
-    }
-}
-
 @keyframes menu-animation {
     0%{
-        width: 13rem !important;
+        width: 13rem;
     }
     
 
     50%{
-        width: 16rem !important;
+        width: 16rem;
     }
 
     75%{
-        width: 10rem !important;
+        width: 10rem;
     }
 
     100%{
-        width: 5rem !important;
+        width: 5rem;
     }
 }
+
 
 @keyframes menu-height {
     0%{
@@ -513,6 +514,8 @@ ul.list-group-flush li span.icon{
 
 
 
+
+
 /* Login and signup form */
 main{
     width: 100%;
@@ -673,4 +676,98 @@ div.home{
         gap: 1.5rem;
         /* overflow: scroll; */
     }
+}
+
+.nav-div{
+    height: 100% !important;
+}
+
+@media screen and (max-height: 560px){
+    .nav-div{
+        margin: 0 !important;
+        height: 70% !important;
+        overflow-y: scroll !important;
+    }
+    ul.nav{
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        height: 80vh  !important;
+        overflow-y: scroll !important;
+    }
+}
+@media screen and (max-height: 490px){
+    .nav-div{
+        margin: 0 !important;
+        height: 70% !important;
+        overflow-y: scroll !important;
+    }
+    ul.nav{
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        height: 100vh  !important;
+        overflow-y: scroll !important;
+    }
+}
+
+@media screen and (max-height: 433px){
+    .nav-div{
+        margin: 0 !important;
+        height: 50% !important;
+        overflow-y: scroll !important;
+    }
+    ul.nav{
+        margin: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        flex-wrap: nowrap !important;
+        height: 110vh  !important;
+        overflow-y: scroll !important;
+    }
+}
+
+@media (max-width: 640px){
+    .card{
+        width: 12rem !important;
+    }
+    .navigation{
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        background: var(--secondary-clr);
+        position: relative;
+        width: 4rem !important;
+        position: fixed;
+        /* overflow-y: auto !important; */
+    }
+    .animation-menu{
+        animation-name: menu-animation-smaller !important;
+        animation-duration: 2.0s !important;
+        animation-direction: alternate !important;
+        animation-iteration-count: 1 !important;
+        animation-fill-mode: forwards !important; 
+    }
+    .home{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .card-section{
+        width: 70% !important;
+        align-self: flex-end;
+        margin-left: 2rem !important;
+    }
+    .card{
+        width: 100% !important;
+    }
+    .nav{
+        align-self: flex-start;
+        overflow-y: auto !important;
+    }
+    
+    
 }
